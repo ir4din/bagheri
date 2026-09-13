@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دبیرستان شهید حسن باقری</title>
+    <style>
+        @font-face {
+            font-family: "Estedad";
+            src: url("fonts/Estedad-Medium.ttf") format("truetype");
+            font-weight: 500;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: "Estedad";
+            src: url("fonts/Estedad-Bold.ttf") format("truetype");
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        :root {
+            --gold: #d4af37;
+            --bg: #2c2f36;
+            --glass: rgba(255, 255, 255, .08);
+            --border: rgba(255, 255, 255, .15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Estedad", sans-serif;
+            font-style: normal;
+        }
+
+        body {
+            min-height: 100vh;
+            background:
+                radial-gradient(circle at top right, #6c6f60 0%, #0a0a0a 50%) #2c2f36 50%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex-direction: column;
+
+            padding-top: 20px;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, var(--gold), transparent 70%);
+            top: -150px;
+            right: -100px;
+            opacity: .15;
+            filter: blur(60px);
+            pointer-events: none;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 550px;
+        }
+
+        .header {
+            text-align: center;
+            margin: 20px;
+            padding: 25px;
+            border-radius: 30px;
+
+            background: rgba(255, 255, 255, .04);
+            backdrop-filter: blur(20px);
+
+            border: 2px solid rgb(195 195 195 / 51%);
+        }
+
+        .logo {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 15px;
+            border-radius: 50%;
+            border: 2px solid var(--gold);
+            background: rgba(255, 255, 255, .05);
+            backdrop-filter: blur(15px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 30px;
+        }
+
+        h1 {
+            color: white;
+            font-size: 22px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        h1::after {
+            content: "";
+            display: block;
+            width: 120px;
+            height: 3px;
+            margin: 12px auto 0;
+            border-radius: 10px;
+            background: linear-gradient(90deg,
+                    transparent,
+                    var(--gold),
+                    transparent);
+        }
+
+        .subtitle {
+            color: #d8d8d8;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            padding: 20px;
+        }
+
+        .card {
+            text-decoration: none;
+            color: white;
+            background: var(--glass);
+            backdrop-filter: blur(18px);
+            border: 1px solid var(--border);
+            border-radius: 22px;
+            padding: 18px 22px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+
+            box-shadow:
+                8px 8px 18px rgba(0, 0, 0, .35),
+                -4px -4px 12px rgba(255, 255, 255, .04);
+
+            transition: .25s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -120%;
+            width: 60%;
+            height: 100%;
+
+            background: linear-gradient(90deg,
+                    transparent,
+                    rgba(255, 255, 255, .15),
+                    transparent);
+
+            transition: .7s;
+        }
+
+        .card:hover::before {
+            left: 150%;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: var(--gold);
+            box-shadow:
+                0 0 20px rgba(212, 175, 55, .25),
+                8px 8px 18px rgba(0, 0, 0, .35);
+        }
+
+        .card {
+            animation: fadeUp .6s ease both;
+        }
+
+        .card:nth-child(2) {
+            animation-delay: .1s;
+        }
+
+        .card:nth-child(3) {
+            animation-delay: .2s;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 14px;
+            background: rgba(212, 175, 55, .15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .info h3 {
+            margin-bottom: 4px;
+            font-weight: 500;
+        }
+
+        .info p {
+            color: #cfcfcf;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 25px;
+            color: #a9a9a9;
+            font-size: 12px;
+            font-weight: 500;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="header">
+
+            <div class="logo">
+                <img src="assets/logo.png" alt="لوگوی دبیرستان">
+            </div>
+
+            <h1>دبیرستان شهید حسن باقری</h1>
+
+            <div class="subtitle">
+                دسترسی سریع به سامانه‌ها و خدمات مدرسه
+            </div>
+
+        </div>
+
+        <div class="links">
+
+            <a class="card" href="https://t.me/Bagheri_Highschool" target="_blank">
+                <div class="icon">
+                    <img src="assets/telegram.png" alt="کانال تلگرام">
+                </div>
+                <div class="info">
+                    <h3>کانال اطلاع رسانی تلگرام</h3>
+                </div>
+            </a>
+
+            <a class="card" href="https://example.com" target="_blank">
+                <div class="icon">
+                    <img src="assets/bale.png" alt="کانال بله">
+                </div>
+                <div class="info">
+                    <h3>کانال اطلاع رسانی بله</h3>
+                </div>
+            </a>
+
+            <a class="card" href="https://www.instagram.com/bagheri_highschool" target="_blank">
+                <div class="icon">
+                    <img src="assets/instagram.png" alt="پیج اینستاگرام">
+                </div>
+                <div class="info">
+                    <h3>صفحه‌ی اینستاگرام</h3>
+                </div>
+            </a>
+
+        </div>
+
+        <div class="footer">
+            © دبیرستان شهید حسن باقری - 2026
+        </div>
+
+    </div>
+
+</body>
+
+</html>
